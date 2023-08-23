@@ -12,6 +12,7 @@ public class Blazelogin
 	
 	By blaemail=By.xpath("//*[@id=\"email\"]");
 	By blapass=By.xpath("//*[@id=\"password\"]");
+	By checkbox=By.xpath("//*[@id=\"app\"]/div/div/div/div/div[2]/form/div[3]/div/div/label/input");
 	By loginbtn=By.xpath("//*[@id=\"app\"]/div/div/div/div/div[2]/form/div[4]/div/button");
 	
 	public Blazelogin(WebDriver driver)
@@ -27,6 +28,7 @@ public class Blazelogin
 	
 	public void login()
 	{
+		driver.findElement(checkbox).click();
 		driver.findElement(loginbtn).click();
 	}
 }

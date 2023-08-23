@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import page.Blazeregister;
 
 
-public class Blazeregtest extends Blazebasecls
+public class Blazeregtest extends Blazeregbasecls
 {
 	
 	@Test

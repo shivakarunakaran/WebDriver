@@ -15,21 +15,21 @@ public class Crossbrowtest
 	
 	WebDriver driver;
 	
-	String baseurl="https://www.facebook.com";
+	String baseurl="https://www.facebook.com/";
 	
 	@Parameters("browser")
 	@BeforeTest
 	public void setUp(String browser)
 	{
-		if(browser.equalsIgnoreCase("chrome"))
-		{
-			driver=new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("edge"))
+		if(browser.equalsIgnoreCase("Edge"))
 		{
 			driver=new EdgeDriver();
 		}
-		else if(browser.equalsIgnoreCase("firefox"))
+		else if(browser.equalsIgnoreCase("Chrome"))
+		{
+			driver=new ChromeDriver();
+		}
+		else if(browser.equalsIgnoreCase("Firefox"))
 		{
 			driver=new FirefoxDriver();
 		}
