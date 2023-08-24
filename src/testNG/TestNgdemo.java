@@ -2,8 +2,8 @@
 
 package testNG;
 
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -12,13 +12,13 @@ import org.testng.annotations.Test;
 
 public class TestNgdemo 
 {
-	FirefoxDriver driver;
+	WebDriver driver;
 	String baseurl="https://www.facebook.com";
 	
 	@BeforeTest//(alwaysRun=true)
 	public void setUp()
 	{
-		driver=new FirefoxDriver();
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
 	}
 	
@@ -35,7 +35,7 @@ public class TestNgdemo
 		System.out.println("Title Verified");
 	}
 	
-	@Test(groups= {"sanity","smoke"},dependsOnMethods = "titleverify")
+	@Test(priority=0,groups= {"sanity","smoke"})//,dependsOnMethods = "titleverify"
 	public void contentverify()
 	{
 		String src=driver.getPageSource();
@@ -55,7 +55,7 @@ public class TestNgdemo
 		System.out.println("Test1 Verification");
 	}
 	
-	@Test(groups= {"regression"})
+	@Test(priority=0,groups= {"regression"})
 	public void test2()
 	{
 		System.out.println("Test2 Verification");
@@ -70,6 +70,7 @@ public class TestNgdemo
 	@AfterTest
 	public void teardown()
 	{
+//		driver.close();
 		System.out.println("Browser close");
 	}
 

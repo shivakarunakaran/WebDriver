@@ -9,8 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -48,7 +48,7 @@ public class Extentreport
 		extent.setSystemInfo("os", "windows10");
 		extent.setSystemInfo("testername", "Isla Rose");
 		extent.setSystemInfo("Browser Name", "edge");
-		driver=new FirefoxDriver();
+		driver=new EdgeDriver();
 		
 	}
 	
@@ -119,8 +119,7 @@ public class Extentreport
 		FileHandler.copy(src, finaldestination);
 		FileHandler.copy(src, new File(destination));
 		
-		return destination;
-		
+		return destination;	
 	}
 			
 }

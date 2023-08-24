@@ -6,7 +6,7 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 
@@ -19,7 +19,7 @@ public class Windowshandle
 	@BeforeTest
 	public void setUp()
 	{
-		driver=new FirefoxDriver();
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
 	}
 	

@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Blazeregtest">
+      <class name="testNG.AmaznWinHndle">
         <methods>
-          <include name="setUp"/>
-          <include name="testlogin"/>
+          <include name="amazon"/>
+          <include name="beforetest"/>
         </methods>
-      </class> <!-- test.Blazeregtest -->
+      </class> <!-- testNG.AmaznWinHndle -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
