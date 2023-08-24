@@ -76,11 +76,7 @@ public class Amazon
 			}
 			
 		driver.switchTo().window(parentwindow);
-//	}
-//	@Test
-//	public void test2()
-//	{
-		test=extent.createTest("Amazn");
+	
 		//SelectBestSellers
 		driver.findElement(By.xpath("//*[@id=\"nav-xshop\"]/a[3]")).click();
 		//SelectCart
