@@ -28,14 +28,14 @@ public class TestNgdemo
 		driver.get(baseurl);
 	}
 	
-	@Test(priority=1,groups= {"sanity"})
+	@Test(priority=1,groups= {"sanity"},enabled = false)
 	public void titleverify()
 	{
 		String title=driver.getTitle();
 		System.out.println("Title Verified");
 	}
 	
-	@Test(priority=0,groups= {"sanity","smoke"})//,dependsOnMethods = "titleverify"
+	@Test(priority=0,groups= {"sanity","smoke"},dependsOnMethods = "titleverify")
 	public void contentverify()
 	{
 		String src=driver.getPageSource();
@@ -49,7 +49,7 @@ public class TestNgdemo
 		}
 	}
 	
-	@Test(groups= {"regression"})
+	@Test(groups= {"regression"},timeOut = 200)
 	public void test1()
 	{
 		System.out.println("Test1 Verification");

@@ -6,43 +6,43 @@ import java.io.FileInputStream;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-//import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Logindatadriven 
 {
 	
-	FirefoxDriver driver;
+	WebDriver driver;
 	String baseurl="https://practicetestautomation.com/practice-test-login/";
 	
 	@BeforeTest
 	public void setUp()
 	{
 		
-		driver=new FirefoxDriver();
-		driver.get(baseurl);
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
+		driver.get(baseurl);
 		
 	}
 	
 	@Test
 	public void login() throws Exception
 	{
-		FileInputStream log=new FileInputStream("C:\\Users\\Shiva Karunakaran\\Desktop\\Book1.xlsx");
+		FileInputStream log=new FileInputStream("C:\\Users\\Shiva Karunakaran\\Downloads\\datadriven.xlsx");
 		XSSFWorkbook wb=new XSSFWorkbook(log);
-		XSSFSheet sh=wb.getSheet("rose");
+		XSSFSheet sh=wb.getSheet("isla");
 		int rowsize=sh.getLastRowNum();
 		for(int i=0;i<rowsize;i++)
 		{
 			String username=sh.getRow(i).getCell(0).getStringCellValue();
 			System.out.println("Username = "+username);
-			String pass=sh.getRow(i).getCell(1).getStringCellValue();
+			String pass=sh.getRow(1).getCell(0).getStringCellValue();
 			System.out.println("Password = "+pass);
-			driver.findElement(By.name("username")).sendKeys(username);
-			driver.findElement(By.name("password")).sendKeys(pass);
-			driver.findElement(By.id("submit")).click();
+			driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys(username);
+			driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(pass);
+			driver.findElement(By.xpath("//*[@id=\"submit\"]")).click();
 			
 			//String url=driver.getCurrentUrl();
 			//String login=("https://practicetestautomation.com/logged-in-successfully/");
@@ -54,6 +54,9 @@ public class Logindatadriven
 			}
 			else
 				System.out.println("Login Failed");
+			
+			driver.findElement(By.xpath("//*[@id=\"loop-container\"]/div/article/div[2]/div/div/div/a")).click();
+			System.out.println("Logged Out Successfully");
 		}
 		
 		wb.close();

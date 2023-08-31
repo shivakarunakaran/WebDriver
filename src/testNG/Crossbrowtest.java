@@ -24,6 +24,7 @@ public class Crossbrowtest
 		if(browser.equalsIgnoreCase("Edge"))
 		{
 			driver=new EdgeDriver();
+			driver.manage().window().maximize();
 		}
 		else if(browser.equalsIgnoreCase("Chrome"))
 		{
