@@ -1,15 +1,14 @@
 // Test Script
 package selenpkg;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class Testscript 
 {
 
 	public static void main(String[] args) 
 	{
-		
-		ChromeDriver driver=new ChromeDriver();
+		EdgeDriver driver=new EdgeDriver();
 		driver.get("https://www.google.com");
 		String actualtitle=driver.getTitle();
 		String exp="google";

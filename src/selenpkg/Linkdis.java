@@ -7,21 +7,22 @@ import java.net.URL;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class Linkdis 
 {
 	
-	ChromeDriver driver;
+	WebDriver driver;
 	String baseurl="https://wwww.facebook.com";
 	
 	
 	@Before
 	public void setUp()
 	{
-		driver=new ChromeDriver();
-		driver.get(baseurl);
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
+		driver.get(baseurl);
 	}
 	
 	@Test

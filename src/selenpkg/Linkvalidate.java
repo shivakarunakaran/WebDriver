@@ -8,20 +8,22 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class Linkvalidate 
 {
 	
-	ChromeDriver driver;
+	WebDriver driver;
+	String url="https://www.facebook.com";
 	
 	@Before
 	public void setUp()
 	{
-		driver=new ChromeDriver();
-		driver.get("https://www.facebook.com");
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
+		driver.get(url);
 	}
 	
 	@Test
@@ -38,7 +40,6 @@ public class Linkvalidate
 
 	public void verify(String link) 
 	{
-		
 		try 
 		{
 			URL u=new URL(link);

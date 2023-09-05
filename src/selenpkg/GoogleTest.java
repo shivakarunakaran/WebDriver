@@ -10,8 +10,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.Dimension;
@@ -25,22 +24,27 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class GoogleTest {
+public class GoogleTest 
+{
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
+  
   @Before
-  public void setUp() {
-    driver = new ChromeDriver();
+  public void setUp() 
+  {
+    driver = new EdgeDriver();
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
   @After
-  public void tearDown() {
+  public void tearDown() 
+  {
     driver.quit();
   }
   @Test
-  public void google() {
+  public void google() 
+  {
     driver.get("https://www.google.com/");
     driver.manage().window().setSize(new Dimension(1050, 748));
     driver.findElement(By.id("APjFqb")).sendKeys("warner");
