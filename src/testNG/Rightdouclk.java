@@ -2,6 +2,9 @@
 
 package testNG;
 
+import java.util.concurrent.TimeUnit;
+
+import org.junit.rules.Timeout;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,8 +17,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Rightdouclk 
-{
-	
+{	
 	WebDriver driver;
 	String baseurl="https://demo.guru99.com/test/simple_context_menu.html";
 	
@@ -29,8 +31,7 @@ public class Rightdouclk
 	
 	@Test
 	public void ritdouclk()
-	{
-		
+	{		
 		WebElement rightclk=driver.findElement(By.xpath("//*[@id=\"authentication\"]/span"));
 		Actions act=new Actions(driver);
 		act.contextClick(rightclk).perform();
@@ -41,8 +42,6 @@ public class Rightdouclk
 		Alert a=driver.switchTo().alert();
 		String alerttext=a.getText();
 		a.accept();
-		System.out.println(alerttext);
-	
-	}
-	
+		System.out.println(alerttext);	
+	}	
 }
