@@ -12,11 +12,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 public class Linkdis 
 {
-	
 	WebDriver driver;
 	String baseurl="https://wwww.facebook.com";
-	
-	
+		
 	@Before
 	public void setUp()
 	{

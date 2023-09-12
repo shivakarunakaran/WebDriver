@@ -9,27 +9,26 @@ import java.util.List;
 
 import org.junit.Before;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
 public class Fbresponsecode 
 {
 	
-	ChromeDriver driver;
-	
+	WebDriver driver;
 	String baseurl="https://wwww.facebook.com";
 	
 	@Before
 	public void setUp()
 	{
-		driver=new ChromeDriver();
-		driver.get(baseurl);
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
+		driver.get(baseurl);
 	}
 	
-
 	@Test
 	public void linkvalidate()
 	{
@@ -43,8 +42,7 @@ public class Fbresponsecode
 	}
 
 	public void verify(String li) 
-	{
-		
+	{	
 		try 
 		{
 			URL u=new URL(li);
@@ -63,9 +61,5 @@ public class Fbresponsecode
 		{
 			System.out.println(e.getMessage());
 		}
-	}
-	
+	}	
 }
-		
-	
-	

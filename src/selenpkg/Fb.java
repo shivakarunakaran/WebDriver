@@ -3,19 +3,23 @@ package selenpkg;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class Fb 
 {
 	
-	ChromeDriver driver;
+	WebDriver driver;
+	String url="http://www.facebook.com";
 	
 	@Before
 	public void setup()
 	{
-		driver=new ChromeDriver();
-		driver.get("http://www.facebook.com");
+		driver=new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
 	}
 	
 	@Test
