@@ -37,16 +37,12 @@ public class Windowshandle
 		{
 			if(!handle.equalsIgnoreCase(parentwindow))
 			{
-				driver.switchTo().window(handle);
-				
+				driver.switchTo().window(handle);	
 				String s=driver.findElement(By.xpath("/html/body/form/table/tbody/tr/td/h2")).getText();
 				System.out.println(s);
 				driver.close();
-			}
-			
+			}	
 			driver.switchTo().window(parentwindow);
-		}
-		
-	}
-	
+		}	
+	}	
 }

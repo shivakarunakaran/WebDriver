@@ -2,14 +2,10 @@
 
 package testNG;
 
-//import java.awt.Desktop.Action;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-//import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -114,15 +110,5 @@ public class AmazonReport
 		{
 			test.log(Status.PASS, "Test Case is Passed"+result.getName());
 		}
-	}
-	
+	}	
 }
-
-
-
-
-
-
-
-
-
