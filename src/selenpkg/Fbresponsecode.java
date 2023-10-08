@@ -33,12 +33,12 @@ public class Fbresponsecode
 	public void linkvalidate()
 	{
 		List<WebElement> li=driver.findElements(By.xpath("//*[@id=\"u_0_2_nP\"]/div[3]/a"));
-		//System.out.println("No. of links ="+li.size());
-		//for(WebElement element:li)
-		//{
-			//String link=element.getAttribute("href");
-			//verify(link);
-		//}
+		System.out.println("No. of links ="+li.size());
+		for(WebElement element:li)
+		{
+			String link=element.getAttribute("href");
+			verify(link);
+		}
 	}
 
 	public void verify(String li) 
