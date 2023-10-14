@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 public class Dropdown 
 {
 	WebDriver driver;
+	
 	String baseurl="https://register.rediff.com/register/register.php?FormName=user_details";
 	
 	@BeforeTest
@@ -31,25 +32,22 @@ public class Dropdown
 		//Day
 		WebElement day=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[1]"));
 		Select daydetails=new Select(day);
-		daydetails.selectByValue("24");
 		List<WebElement> l=daydetails.getOptions();
+		daydetails.selectByValue("31");
 		System.out.println(l.size());
 		
 		//Month
 		WebElement month=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[2]"));
 		Select monthsetails=new Select(month);
-		monthsetails.selectByVisibleText("JUN");
 		List<WebElement> li=monthsetails.getOptions();
+		monthsetails.selectByVisibleText("FEB");
 		System.out.println(li.size());
 		
 		//Year
 		WebElement year=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[3]"));
 		Select yeardetails=new Select(year);
-		yeardetails.selectByIndex(10);
 		List<WebElement> lis=yeardetails.getOptions();
+		yeardetails.selectByIndex(10);
 		System.out.println(lis.size());
 	}
-	
-	
-	
 }
