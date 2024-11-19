@@ -31,13 +31,11 @@ public class Alertmsgcontrol
 		driver.findElement(By.xpath("/html/body/input[1]")).click();
 		//driver.findElement(By.xpath("//input[@value='Display alert box']")).click();
 		//Alert
-		Alert a=driver.switchTo().alert();
-		String alerttext= a.getText();
+		Alert alert=driver.switchTo().alert();
+		String alerttext= alert.getText();
 		System.out.println(alerttext);
-		a.accept();
+		alert.accept();
 		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("isla");
 		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("rose");
 	}
- 
-	
 }

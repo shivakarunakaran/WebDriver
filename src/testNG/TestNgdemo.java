@@ -73,7 +73,4 @@ public class TestNgdemo
 //		driver.close();
 		System.out.println("Browser close");
 	}
-
-	
-
 }

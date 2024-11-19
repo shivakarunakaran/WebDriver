@@ -28,12 +28,12 @@ public class Dragdrop
 	public void dragdrop()
 	{
 		
-		WebElement drap=driver.findElement(By.xpath("//*[@id=\"draggable\"]"));
+		WebElement drag=driver.findElement(By.xpath("//*[@id=\"draggable\"]"));
 		WebElement drop=driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
-		Actions act=new Actions(driver);
-		act.dragAndDrop(drap, drop).perform();
+		Actions action=new Actions(driver);
+		action.dragAndDrop(drag, drop).perform();
 		String droptext=drop.getText();
-		if(droptext.equals("Droppes!"))
+		if(droptext.equals("Dropped!"))
 		{
 			System.out.println("Passed");
 		}

@@ -32,22 +32,22 @@ public class Dropdown
 		//Day
 		WebElement day=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[1]"));
 		Select daydetails=new Select(day);
-		List<WebElement> l=daydetails.getOptions();
+		List<WebElement> list1=daydetails.getOptions();
 		daydetails.selectByValue("31");
-		System.out.println(l.size());
+		System.out.println(list1.size());
 		
 		//Month
 		WebElement month=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[2]"));
 		Select monthsetails=new Select(month);
-		List<WebElement> li=monthsetails.getOptions();
+		List<WebElement> list2=monthsetails.getOptions();
 		monthsetails.selectByVisibleText("FEB");
-		System.out.println(li.size());
+		System.out.println(list2.size());
 		
 		//Year
 		WebElement year=driver.findElement(By.xpath("//*[@id=\"tblcrtac\"]/tbody/tr[22]/td[3]/select[3]"));
 		Select yeardetails=new Select(year);
-		List<WebElement> lis=yeardetails.getOptions();
+		List<WebElement> list3=yeardetails.getOptions();
 		yeardetails.selectByIndex(10);
-		System.out.println(lis.size());
+		System.out.println(list3.size());
 	}
 }

@@ -33,12 +33,12 @@ public class Rightdouclk
 	public void ritdouclk()
 	{		
 		WebElement rightclk=driver.findElement(By.xpath("//*[@id=\"authentication\"]/span"));
-		Actions act=new Actions(driver);
-		act.contextClick(rightclk).perform();
+		Actions action=new Actions(driver);
+		action.contextClick(rightclk).perform();
 		driver.findElement(By.xpath("//*[@id=\"authentication\"]/ul/li[1]")).click();
 		driver.switchTo().alert().accept();
 		WebElement douclk=driver.findElement(By.xpath("//*[@id=\"authentication\"]/button"));
-		act.doubleClick(douclk).perform();
+		action.doubleClick(douclk).perform();
 		Alert a=driver.switchTo().alert();
 		String alerttext=a.getText();
 		a.accept();

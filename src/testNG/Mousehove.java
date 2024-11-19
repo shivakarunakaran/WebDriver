@@ -36,12 +36,12 @@ public class Mousehove
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));  //Implicit wait
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30)); //Explicit wait
 		WebElement electronics=driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[3]/a"));
-		Actions act=new Actions(driver);
-		act.moveToElement(electronics).perform();
+		Actions action=new Actions(driver);
+		action.moveToElement(electronics).perform();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[3]/a")));
 //		driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[3]/div[2]/div[1]/nav[1]/ul/li[1]/a"));
 		WebElement fashion=driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[5]/a"));
-		act.moveToElement(fashion).perform();
+		action.moveToElement(fashion).perform();
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[5]/a")));
 		driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/ul/li[5]/a"));
 		

@@ -32,29 +32,29 @@ public class Fbresponsecode
 	@Test
 	public void linkvalidate()
 	{
-		List<WebElement> li=driver.findElements(By.xpath("//*[@id=\"u_0_2_nP\"]/div[3]/a"));
-		System.out.println("No. of links ="+li.size());
-		for(WebElement element:li)
+		List<WebElement> list=driver.findElements(By.xpath("//*[@id=\"u_0_2_nP\"]/div[3]/a"));
+		System.out.println("No. of links ="+list.size());
+		for(WebElement element:list)
 		{
 			String link=element.getAttribute("href");
 			verify(link);
 		}
 	}
 
-	public void verify(String li) 
+	public void verify(String list) 
 	{	
 		try 
 		{
-			URL u=new URL(li);
-			HttpURLConnection con=(HttpURLConnection)u.openConnection();
+			URL url=new URL(list);
+			HttpURLConnection con=(HttpURLConnection)url.openConnection();
 			con.connect();
 			if(con.getResponseCode()==200)
 			{
-				System.out.println("Successful -- "+li);
+				System.out.println("Successful -- "+list);
 			}
 			else if(con.getResponseCode()==404)
 			{
-				System.out.println("Broken Link -- "+li);
+				System.out.println("Broken Link -- "+list);
 			}
 		}
 		catch (Exception e)
