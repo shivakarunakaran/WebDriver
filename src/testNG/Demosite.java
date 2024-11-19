@@ -14,8 +14,9 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 //import org.testng.annotations.AfterClass;
 
@@ -28,7 +29,7 @@ public class Demosite
 	@BeforeClass
 	public void beforeClass() 
 	{
-		driver = new FirefoxDriver();
+		driver = new EdgeDriver();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(baseurl);

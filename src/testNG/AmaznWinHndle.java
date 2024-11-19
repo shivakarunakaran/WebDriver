@@ -31,8 +31,8 @@ public class AmaznWinHndle
 		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("Mobiles",Keys.ENTER);
 		//Select1st Link	
 		String parentwindow=driver.getWindowHandle();
-//		System.out.println("Parent Window Title " +driver.getTitle());
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div/div/div[1]/h2/a/span")).click();
+		System.out.println("Parent Window Title " +driver.getTitle());
+		driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/span/div/div/div/div[2]/div/div/div[1]/h2/a/span")).click();
 			
 		for(String handle : driver.getWindowHandles())
 			{

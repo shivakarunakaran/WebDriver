@@ -28,7 +28,8 @@ public class Asserthard
 	public void asserthard()
 	{
 		String actual=driver.getTitle();
-		String expect="Facebook";
+//		String expect="Facebook";
+		String expect="Facebook – log in or sign up";
 		
 		Assert.assertEquals(actual, expect);
 		

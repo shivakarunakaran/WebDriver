@@ -6,8 +6,9 @@ import java.io.FileInputStream;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.edge.EdgeDriver;
 //import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -15,14 +16,16 @@ public class Datadriven
 {
 	
 	//ChromeDriver driver;
-	FirefoxDriver driver;
+	//FirefoxDriver driver;
+	EdgeDriver driver;
 	String baseurl="https://www.facebook.com";
 	
 	@BeforeTest
 	public void setUp()
 	{
 		//driver=new ChromeDriver();
-		driver=new FirefoxDriver();
+		//driver=new FirefoxDriver();
+		driver=new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.get(baseurl);
 		
@@ -34,7 +37,7 @@ public class Datadriven
 		
 		FileInputStream ob=new FileInputStream("C:\\Users\\Shiva Karunakaran\\Desktop\\Book1.xlsx");
 		XSSFWorkbook wb=new XSSFWorkbook(ob);  //To get workbook in Excel
-		XSSFSheet sh=wb.getSheet("isll");  //Return Sheet Details
+		XSSFSheet sh=wb.getSheet("isla");  //Return Sheet Details
 		int rowsize=sh.getLastRowNum();  //Return Row Number
 		for(int i=1;i<rowsize;i++)
 		{
@@ -49,9 +52,7 @@ public class Datadriven
 			driver.findElement(By.name("login")).click();
 			driver.navigate().refresh();
 			driver.navigate().back();
-		}
-		
+		}	
 		wb.close();
 	}
-	
 }
