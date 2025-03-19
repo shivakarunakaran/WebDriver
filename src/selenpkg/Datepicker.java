@@ -44,7 +44,7 @@ public class Datepicker
 			
 			String monthtext=driver.findElement(By.xpath("//*[@id=\"calendar-searchboxdatepicker\"]/div/div[1]/div/div[2]/h3")).getText();
 			System.out.println("Month="+monthtext);
-			if(monthtext.equals("August 2023"))
+			if(monthtext.equals("March 2025"))
 			{
 				System.out.println("Month Selected");
 				break;
@@ -71,7 +71,7 @@ public class Datepicker
 			{
 				String mnthtext=driver.findElement(By.xpath("//*[@id=\\\"calendar-searchboxdatepicker\\\"]/div/div[1]/div/div[2]/h3")).getText();
 				System.out.println("Month="+mnthtext);//--//*[@id="calendar-searchboxdatepicker"]/div/div[1]/div/div[1]/h3
-				if(mnthtext.equals("August 2023"))
+				if(mnthtext.equals("March 2025"))
 				{
 					System.out.println("Month Selected");
 					break;
